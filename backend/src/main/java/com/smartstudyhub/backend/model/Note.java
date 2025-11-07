@@ -20,10 +20,10 @@ public class Note {
     @Column(columnDefinition = "TEXT")
     private String summary;
 
-    @Column(columnDefinition = "jsonb")
+    @Column(columnDefinition = "TEXT")
     private String flashcards;
 
-    @Column(columnDefinition = "jsonb")
+    @Column(columnDefinition = "TEXT")
     private String questions;
 
 
