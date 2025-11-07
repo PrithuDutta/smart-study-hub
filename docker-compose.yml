@@ -1,0 +1,24 @@
+services:
+  # Service 1: The PostgreSQL Database
+  database:
+    image: postgres:15
+    container_name: smartstudy-db
+    ports:
+      - "5432:5432" # Host:Container
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: smartstudyhub
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  # Service 2: The new Python AI Service
+  ai_service:
+    build: ./ai_service 
+    container_name: smartstudy-ai
+    ports:
+      - "5001:5001" # Expose the Python server's port
+    
+
+volumes:
+  postgres-data:
